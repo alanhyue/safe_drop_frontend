@@ -1,0 +1,526 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft Yahei", sans-serif;
+}
+body {
+  background-color: #fff;
+}
+/* 字体引入 */
+@font-face {
+  font-family: 'BrandCustomFont'; /* 自定义字体名称，后续引用用 */
+  src: url('../brand/Brand/Brand/Brand-3.ttf') format('opentype'); /* 字体文件路径，需根据实际层级调整 */
+  font-weight: normal; /* 字体权重，可根据字体实际情况设 normal/bold 等 */
+  font-style: normal;  /* 字体样式，可设 normal/italic 等 */
+}
+/* 容器 */
+.home-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* 头部导航 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #e0ffff;
+  border-bottom: 1px solid #add8e6;
+}
+.header-logo img {
+  height: 40px;
+}
+.header-nav .nav-link {
+  margin: 0 25px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+.header-nav .nav-link:not(:last-child)::after {
+  content: ""; 
+  position: absolute; 
+  right: -25px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  height: 20px;
+  width: 1px; 
+  background-color: #181717; 
+}
+/* 用户信息容器：水平对齐 */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  cursor: pointer; /* 鼠标悬停显示指针 */
+  padding: 0 10px;
+}
+
+/* 头像样式 */
+.user-avatar {
+  width: 36px; 
+  height: 36px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 2px solid #fff; 
+}
+
+/* 用户名样式 */
+.user-name {
+  color: #333; 
+  font-size: 14px; 
+  font-weight: 500;
+}
+.header-btn {
+  padding: 6px 12px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* 公共区域标题 */
+.section-title,
+.section-title .brand-name{
+  font-family: 'BrandCustomFont', sans-serif;  color: #023768 ;
+  font-weight: 700 ;
+  font-size: 34px ;
+}
+.section-title {
+  font-size: 24px;
+  color: #0000cd;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.section-title span {
+  margin-left: 5px;
+  font-size: 18px;
+  color: rgba(26, 26, 26, 0.7);
+}
+.section-title-text{
+    line-height: 35px;
+}
+.section-subtitle {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: rgba(30, 30, 30, 0.8);
+}
+.section-subtitle img {
+  height: 24px;
+  margin-right: 8px;
+}
+/* 步骤区域 */
+.steps-section {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.step-list-title{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: center;
+  margin-top: 20px;
+}
+.steps-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-top: 25px;
+  height: 500px;
+}
+.steps-list {
+  flex: 3;
+  margin-right: 20px;
+  border: 1px solid #28B4F6;
+  border-radius: 10px;
+}
+.step-num {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 28px;
+}
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  margin: 15px;
+}
+.step-icon{
+  display: block; 
+  margin: 10px auto;  
+}
+.steps-preview{
+  flex: 7;
+}
+.steps-preview img {
+  max-width: 400px;
+  border-radius: 4px;
+}
+/* 传输、接收、记录卡片通用 */
+.transfer-card,
+.receive-card,
+.record-card {
+  background-color: #DEF4FD;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+/* 11111 */
+.transfer-section {
+  background-color: #fff; 
+  padding: 20px;
+}
+
+.transfer-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.transfer-icon {
+  width: 40px; /* 纸飞机图标宽度，可根据实际调整 */
+  height: 40px; /* 纸飞机图标高度，可根据实际调整 */
+  margin-right: 10px;
+}
+
+.transfer-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #333; /* 标题下方的横线 */
+  padding-bottom: 10px;
+}
+
+.transfer-card {
+  background-color: #DEF4FD;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.choose-img-text {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.file-list {
+  z-index: 10;
+  margin-left: 5%;
+  width: 90%;
+  height: 160px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow {
+  width: 30px; /* 箭头宽度，可根据实际调整 */
+  height: 30px; /* 箭头高度，可根据实际调整 */
+  cursor: pointer;
+}
+
+.left-arrow {
+  margin-right: 10px;
+}
+
+.right-arrow {
+  margin-left: 10px;
+}
+
+.carousel-item {
+  width: 80px; /* 轮播项宽度，可根据实际调整 */
+  height: 80px; /* 轮播项高度，可根据实际调整 */
+  background-color: #d3d3d3; /* 灰色块，模拟图片 */
+  margin: 0 5px;
+}
+
+.img-link-input {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.img-link-input input {
+  flex: 1;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-right: 10px;
+}
+
+.verify-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.python-package-text {
+  margin: 25px 0;
+}
+
+.code-block {
+  background-color: #f5f5f5;
+  height: 240px;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.code-block pre {
+  margin-top: 95px;
+  font-family: monospace;
+}
+
+.python-script-text {
+  margin: 10px 0;
+}
+
+/* 接收文件区域 */
+.receive-section {
+  padding: 20px;
+}
+
+.receive-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.receive-icon {
+  width: 60px; /* 图标宽度，可根据实际调整 */
+  height: 60px; /* 图标高度，可根据实际调整 */
+  margin-right: 10px;
+}
+
+.receive-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #333; /* 标题下方的横线 */
+  padding-bottom: 10px;
+}
+
+.receive-card {
+  display: flex;
+  background-color: #e6f7ff; /* 浅蓝色背景，匹配图片 */
+  padding: 20px;
+}
+
+.receive-left,
+.receive-right {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.receive-left h3,
+.receive-right h3 {
+  margin-bottom: 15px;
+}
+
+.drop-area {
+  border: 2px dashed #ccc; /* 虚线边框，模拟上传区域 */
+  padding: 20px;
+  text-align: center;
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plus-icon {
+  font-size: 36px; /* 加号大小，可根据实际调整 */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.receive-right input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-bottom: 15px;
+  background-color: #d3d3d3; /* 输入框灰色背景，匹配图片 */
+}
+
+.get-file-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+/* 传输记录区域 */
+.record-section {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.record-filter-sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.filter, .sort {
+  display: flex;
+  align-items: center;
+}
+
+.filter label, .sort label {
+  margin-right: 8px;
+}
+
+.filter select, .sort select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.storage {
+  display: flex;
+  align-items: center;
+}
+
+.storage-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.help-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.record-tip {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  color: #1e90ff;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.tip-icon {
+  margin-right: 8px;
+}
+
+.close-tip {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1e90ff;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: #999;
+}
+/* 底部 */
+.footer {
+  display: flex;
+  justify-content: center; /* 整体内容水平居中 */
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px; /* 每个联系项之间的间距 */
+}
+
+.contact-icon {
+  width: 24px; /* 图标宽度，可根据实际调整 */
+  height: 24px; /* 图标高度，可根据实际调整 */
+  margin-right: 8px; /* 图标与文字的间距 */
+}
+
+.contact-item span {
+  font-size: 14px; /* 文字大小，可根据实际调整 */
+}
+/* 预览图替代块 */
+.preview-block {
+  width: 740px;
+  height: 500px;
+  background-color: #d1d5db; /* 浅灰 */
+}
+
+/* 上传图标替代块 */
+.upload-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #10b981; /* 绿色 */
+  margin-right: 8px;
+}
+
+/* 接收图标替代块 */
+.receive-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #3b82f6; /* 蓝色 */
+  margin-right: 8px;
+}
+
+/* 记录图标替代块 */
+.record-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #f97316; /* 橙色 */
+  margin-right: 8px;
+}
+
+/* 拖拽区域图标替代块 */
+.drop-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #10b981; /* 绿色 */
+  margin-bottom: 10px;
+}

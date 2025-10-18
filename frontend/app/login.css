@@ -1,0 +1,131 @@
+.login-modal-content {
+  padding: 24px;
+  width: 360px;
+  box-sizing: border-box;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.email-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.login-input {
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 0 12px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+  outline: none;
+}
+
+.input-icon {
+  margin-right: 8px;
+  color: #8c8c8c;
+}
+
+.login-btn {
+  height: 44px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #1890ff;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #096dd9;
+}
+
+.login-agreement {
+  margin-bottom: 24px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* 分割线样式 */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.divider-text {
+  padding: 0 12px;
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+/* 第三方登录按钮 */
+.third-party-login {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.social-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.wechat-btn {
+  background-color: #07c160;
+  color: white;
+  border: none;
+}
+
+.wechat-btn:hover {
+  background-color: #06ae56;
+  color: white;
+}
+
+.qq-btn {
+  background-color: #12b7f5;
+  color: white;
+  border: none;
+}
+
+.qq-btn:hover {
+  background-color: #0aa2d8;
+  color: white;
+}
