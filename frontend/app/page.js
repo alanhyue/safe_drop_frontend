@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect, } from 'react';
+import Image from "next/image";
 import './HomePage.css';
-import logoImg from './images/icons/logo.png';
 import { Modal, Button, Input, Checkbox } from 'antd';
 import { LoginModalContent } from './login';
+import Link from 'next/link';
 
 export default function HomePage() {
   const [hasToken, setHasToken] = useState(false);
@@ -26,22 +27,22 @@ export default function HomePage() {
       {/* 顶部导航栏 */}
       <header className="header">
         <div className="header-logo">
-          <img src={logoImg} alt="SafeDrop Logo" className="logo-img" />
+          <Image src='/image/logo.png' width={40} height={40} alt="SafeDrop Logo" />
         </div>
         <nav className="header-nav">
-          <a href="#" className="nav-link active">主页</a>
-          <a href="#" className="nav-link">开始新传输</a>
-          <a href="#" className="nav-link">接收文件</a>
-          <a href="#" className="nav-link">传输记录</a>
+          <Link href="/NewHomePage" className="nav-link active">主页</Link>
+          <Link href="#" className="nav-link">开始新传输</Link>
+          <Link href="#" className="nav-link">接收文件</Link>
+          <Link href="#" className="nav-link">传输记录</Link>
         </nav>
         {hasToken ? (
           <div className="user-info">
             <img
-              src={defaultAvatar}
+              src={defaultAvatar}  // 这里的 defaultAvatar 需替换为实际用户头像变量
               alt="用户头像"
               className="user-avatar"
             />
-            <span className="user-name">{userName}</span>
+            <span className="user-name">{userName}</span>  {/* 这里的 userName 需替换为实际用户名变量 */}
           </div>
         ) : (
           <button onClick={showModal} className="header-btn">登录/注册/我的账号</button>
@@ -185,7 +186,7 @@ export default function HomePage() {
         {/* 提示栏 */}
         <div className="record-tip">
           <span>登陆账号获取所有记录</span>
-          <button className="close-tip">点击登陆</button>
+          <button onClick={showModal} className="close-tip">点击登陆</button>
         </div>
 
         {/* 空状态区域 */}

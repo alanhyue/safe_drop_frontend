@@ -1,0 +1,410 @@
+/* 容器 */
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* 横幅区域 */
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.banner-bg-image {
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.banner-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.6) 0%,
+    rgba(37, 99, 235, 0.5) 50%,
+    rgba(29, 78, 216, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  text-align: center;
+  color: white;
+}
+
+.banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* 为antd Button添加自定义样式 */
+.btn-login {
+  background-color: #1e3a8a !important;
+  border-color: #1e3a8a !important;
+  color: white !important;
+  border-radius: 24px !important;
+  height: 44px !important;
+  padding: 0 28px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+.btn-login:hover {
+  background-color: #1e40af !important;
+  border-color: #1e40af !important;
+  transform: translateY(-2px);
+}
+
+.btn-guide {
+  background-color: white !important;
+  border-color: white !important;
+  color: #374151 !important;
+  border-radius: 24px !important;
+  height: 44px !important;
+  padding: 0 28px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+}
+
+.btn-guide:hover {
+  background-color: #f3f4f6 !important;
+  border-color: #f3f4f6 !important;
+  color: #374151 !important;
+  transform: translateY(-2px);
+}
+
+.banner-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.banner-description {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 功能区域 */
+.feature-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+/* 为antd Card添加自定义样式 */
+.feature-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #e5e7eb !important;
+  border-top: none !important;
+}
+
+.feature-card .ant-card-body {
+  padding: 0 !important;
+}
+
+/* 功能卡片1 - 隐秘传输 */
+.feature-card-1 .ant-card-body {
+  padding: 0 !important;
+}
+
+.feature-content-1 {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 0;
+  min-height: 285px;
+}
+
+.feature-text-1 {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.feature-icon {
+    position: absolute;
+    left: 150px;
+    width: 170px;
+    height: 170px;
+    top: 20px;
+}
+
+.feature-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+.feature-image-container-1 {
+  position: relative;
+  border-radius: 0 12px 12px 0;
+  overflow: hidden;
+  background: white;
+}
+
+.feature-image-1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+  width: 730px;
+  height: 270px;
+  object-fit: contain;
+}
+
+/* 功能卡片2 - 加密 & 阅后即焚 */
+.feature-card-2 .ant-card-body {
+  padding: 48px 40px !important;
+}
+
+.feature-content-2 {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.feature-item-2 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.feature-image-box-2 {
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-image-2 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-text-2 {
+  flex: 1;
+}
+
+.feature-title-2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.feature-description-2 {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+.highlight-text {
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.feature-divider {
+  width: 1px;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, #d1d5db 20%, #d1d5db 80%, transparent);
+  margin: 0 32px;
+}
+
+/* 功能卡片3 - 离线处理 */
+.feature-card-3 .ant-card-body {
+  padding: 0 !important;
+}
+
+.feature-content-3 {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 0;
+  min-height: 280px;
+}
+
+.feature-text-3 {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-title-3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.feature-description-3 {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0;
+}
+
+.python-text {
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  color: #1e3a8a;
+  padding: 0 4px;
+}
+
+.feature-image-container-3 {
+  position: relative;
+  border-radius: 0 12px 12px 0;
+  overflow: hidden;
+  background: white;
+}
+
+.feature-image-3 {
+  width: 80%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-icon-3 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 170px;
+  object-fit: contain;
+}
+
+/* 图片居多 加响应式设计 */
+@media (max-width: 1024px) {
+  .banner-title {
+    font-size: 42px;
+  }
+
+  .feature-content-1,
+  .feature-content-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-image-container-1,
+  .feature-image-container-3 {
+    border-radius: 0 0 12px 12px;
+    min-height: 300px;
+  }
+
+  .feature-content-2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .feature-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 350px;
+  }
+
+  .banner-content {
+    padding: 60px 24px;
+  }
+
+  .banner-title {
+    font-size: 32px;
+  }
+
+  .banner-description {
+    font-size: 15px;
+  }
+
+  .banner-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-login,
+  .btn-guide {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .feature-section {
+    padding: 24px 20px;
+  }
+
+  .feature-text-1,
+  .feature-text-3 {
+    padding: 32px 24px;
+  }
+
+  .feature-title,
+  .feature-title-3 {
+    font-size: 22px;
+  }
+
+  .feature-card-2 .ant-card-body {
+    padding: 32px 24px !important;
+  }
+
+  .feature-item-2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-image-box-2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .feature-title-2 {
+    font-size: 20px;
+  }
+}

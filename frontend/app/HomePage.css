@@ -10,10 +10,10 @@ body {
 }
 /* 字体引入 */
 @font-face {
-  font-family: 'BrandCustomFont'; /* 自定义字体名称，后续引用用 */
-  src: url('../brand/Brand/Brand/Brand-3.ttf') format('opentype'); /* 字体文件路径，需根据实际层级调整 */
-  font-weight: normal; /* 字体权重，可根据字体实际情况设 normal/bold 等 */
-  font-style: normal;  /* 字体样式，可设 normal/italic 等 */
+  font-family: 'BrandCustomFont'; 
+  src: url('../brand/Brand/Brand/Brand-3.ttf') format('opentype'); 
+  font-weight: normal; 
+  font-style: normal;
 }
 /* 容器 */
 .home-container {
@@ -32,6 +32,10 @@ body {
 }
 .header-logo img {
   height: 40px;
+}
+.logo-img {
+  height: 40px;
+  width: 40px;
 }
 .header-nav .nav-link {
   margin: 0 25px;
