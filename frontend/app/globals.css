@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1f2937;
+  /* Gray-800 */
+  line-height: 1.75;
+}
+
+/* --- Headings --- */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #374151;
+  /* Gray-700 */
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Lists --- */
+ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: #2563eb;
+  /* blue-600 */
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8;
+  /* blue-700 */
+  text-decoration: underline;
+}
+
+a:active {
+  color: #1e40af;
+  /* blue-800 */
+}
+
+a:visited {
+  color: #4f46e5;
+  /* indigo-600 for subtle differentiation */
+}
+
+a:focus {
+  outline: 2px solid #3b82f6;
+  /* focus ring */
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --- Code & Pre blocks --- */
+pre {
+  background-color: #0f172a;
+  /* slate-900 */
+  color: #e2e8f0;
+  /* slate-200 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+/* --- Note box --- */
+.note {
+  background-color: #fef3c7;
+  /* amber-100 */
+  border-left: 4px solid #f59e0b;
+  /* amber-500 */
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+}

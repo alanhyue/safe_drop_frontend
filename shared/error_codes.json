@@ -1,0 +1,26 @@
+{
+    "insufficient_balance": {
+        "zh": "字节余额不足",
+        "en": "Insufficient balance"
+    },
+    "user_exits": {
+        "zh": "用户已存在，请登录或使用其他用户名注册。",
+        "en": "User already exists. Please login or register with a different username."
+    },
+    "user_wrong_credentials": {
+        "zh": "用户名或密码错误。",
+        "en": "Incorrect username or password."
+    },
+    "broken_image_file": {
+        "zh": "无法读取此图片。请确保这是安放生成的 PNG 图片，并且在传输过程中没有被转换或压缩。",
+        "en": "broken image"
+    },
+    "username_mismatch": {
+        "zh": "此账户无权限读取此文件。请确保当前登陆的用户名与创建图片的用户名相同",
+        "en": "This account does not have permission to access this file. Please make sure the currently logged-in username matches the one that created the image."
+    },
+    "extract_id_not_found": {
+        "zh": "请求的文件夹不存在",
+        "en": "Extract ID not found"
+    }
+}

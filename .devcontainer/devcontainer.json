@@ -1,0 +1,33 @@
+{
+	"name": "Fullstack Dev Container",
+	// "dockerComposeFile": "docker-compose.yml",
+	"dockerFile": "Dockerfile",
+	"context": "..",
+	"workspaceFolder": "/workspace",
+	"forwardPorts": [
+		3000,
+		5000
+	],
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-python.black-formatter",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"ms-vscode.vscode-typescript-next"
+	],
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/sh",
+		"python.defaultInterpreterPath": "/usr/local/bin/python3"
+	},
+	"mounts": [
+		"source=${localWorkspaceFolder}/,target=/workspace/,type=bind,consistency=delegated",
+		"source=node_modules,target=/workspace/frontend/node_modules,type=volume",
+		"source=${localWorkspaceFolder}/.devcontainer/.bashrc,target=/root/.bashrc,type=bind,consistency=cached"
+	],
+	"postCreateCommand": "echo 'Dev container ready!'",
+	"runArgs": [
+		"--name",
+		"safedrop-dev"
+	]
+}
