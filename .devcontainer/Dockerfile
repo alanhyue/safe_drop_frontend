@@ -13,11 +13,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set working directory
 WORKDIR /workspace
 
-# Copy backend requirements and install Python dependencies
-COPY backend/requirements.txt /workspace/backend/requirements.txt
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r /workspace/backend/requirements.txt
-
 # Copy frontend package files and install Node dependencies
 COPY frontend/package*.json /workspace/frontend/
 RUN cd /workspace/frontend && npm install

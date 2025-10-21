@@ -1,5 +1,5 @@
 {
-	"name": "Fullstack Dev Container",
+	"name": "safedrop-frontend-dev",
 	// "dockerComposeFile": "docker-compose.yml",
 	"dockerFile": "Dockerfile",
 	"context": "..",
@@ -9,9 +9,6 @@
 		5000
 	],
 	"extensions": [
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"ms-python.black-formatter",
 		"esbenp.prettier-vscode",
 		"dbaeumer.vscode-eslint",
 		"ms-vscode.vscode-typescript-next"
@@ -28,6 +25,6 @@
 	"postCreateCommand": "echo 'Dev container ready!'",
 	"runArgs": [
 		"--name",
-		"safedrop-dev"
+		"safedrop-dev-frontend"
 	]
 }
