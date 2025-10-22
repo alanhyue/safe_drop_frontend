@@ -14,7 +14,7 @@ export default function HomePage() {
 
                 <div className="banner-content relative max-w-6xl mx-auto px-6 py-16 text-center">
                     <div className="banner-buttons flex justify-center gap-4 mb-8">
-                        <Button size="large" className="btn-guide">
+                        <Button href="/save" size="large" className="btn-guide">
                             查看步骤说明
                         </Button>
                     </div>
@@ -32,7 +32,7 @@ export default function HomePage() {
                 <div className="feature-card feature-card-1 shadow-lg" >
                     <div className="feature-content-1">
                         <div className="feature-text-1">
-                            <div className="feature-header">
+                            <div className="feature-header relative">
                                 <h3 className="feature-title">隐秘文件传输</h3>
                                 <Image src="/image/plane.png" width={60} height={60} alt="传输图标" className="feature-icon" />
                             </div>
