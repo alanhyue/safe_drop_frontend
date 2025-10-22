@@ -7,9 +7,7 @@ import ItemSelector from "@/components/item-selector";
 import Button from "@/components/button";
 import Banner from "@/components/banner";
 import Modal from "@/components/modal";
-import { API_URL } from "@/app_config";
 import api from "@/lib/api";
-import errors from "@/lib/errors";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -84,7 +82,7 @@ export default function ReadPage() {
             </h1>
             <FileUpload
                 accept=".png"
-                maxSizeMB={20}
+                maxSizeMB={100}
                 targetUrl={`/extract`}
                 onFileSelect={handleFileUpload}
             />

@@ -14,9 +14,6 @@ export default function HomePage() {
 
                 <div className="banner-content relative max-w-6xl mx-auto px-6 py-16 text-center">
                     <div className="banner-buttons flex justify-center gap-4 mb-8">
-                        <Button type="primary" size="large" className="btn-login">
-                            登录/注册/我的账号
-                        </Button>
                         <Button size="large" className="btn-guide">
                             查看步骤说明
                         </Button>
