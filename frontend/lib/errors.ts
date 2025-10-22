@@ -1,4 +1,4 @@
-import rawErrors from "../../shared/error_codes.json";
+import rawErrors from "../shared/error_codes.json";
 
 // Transform to { key: zh_translation }
 const zh_errors: Record<string, string> = Object.fromEntries(

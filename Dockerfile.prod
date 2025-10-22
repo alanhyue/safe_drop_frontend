@@ -1,0 +1,16 @@
+# ============================================
+# Production image only — no build steps
+# ============================================
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=80
+
+# Copy only runtime artifacts
+COPY frontend/.next/standalone ./
+COPY frontend/.next/static ./.next/static
+COPY frontend/public ./public
+
+EXPOSE 80
+CMD ["node", "server.js"]
