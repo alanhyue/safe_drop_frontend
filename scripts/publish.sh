@@ -1,61 +1,53 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 set -o pipefail
 
 # ===== Config =====
-APP_NAME="safedrop-prod"
-IMAGE_NAME="safedrop-prod:latest"
-TAR_FILE="safedrop-prod.tar"
+APP_NAME="safedrop-prod-front"
+IMAGE_NAME="${APP_NAME}:latest"
+TAR_FILE="${APP_NAME}.tar"
 VPS_USER="heng"
 VPS_IP="69.171.74.188"
 VPS_PATH="/var/www/safedrop"
+CONTAINER_NAME="${APP_NAME}"
+FRONTEND_PORT=3005   # <--- change this if you want to run frontend on a different port
 
 timestamp() { echo "[$(date '+%Y-%m-%d %H:%M:%S')]"; }
 
 echo "$(timestamp) === Step 1: Copy Docker image to VPS ==="
-if scp build/${TAR_FILE} ${VPS_USER}@${VPS_IP}:${VPS_PATH}/; then
+if scp "build/${TAR_FILE}" "${VPS_USER}@${VPS_IP}:${VPS_PATH}/"; then
     echo "$(timestamp) ✅ Image copied successfully."
 else
     echo "$(timestamp) ❌ Failed to copy image."
     exit 1
 fi
 
-echo "$(timestamp) === Step 2: Deploy container on VPS ==="
-ssh ${VPS_USER}@${VPS_IP} bash -s << 'EOF'
-timestamp() { echo "[$(date '+%Y-%m-%d %H:%M:%S')]"; }
+echo "$(timestamp) === Step 2: Deploy frontend container on VPS ==="
+ssh "${VPS_USER}@${VPS_IP}" bash -s <<EOF
+set -e
+timestamp() { echo "[\$(date '+%Y-%m-%d %H:%M:%S')]"; }
 
-echo "$(timestamp) Removing old Docker image (if exists)..."
-if docker rmi -f safedrop-prod:latest &>/dev/null; then
-    echo "$(timestamp) ✅ Old image removed."
-else
-    echo "$(timestamp) ⚠ No old image found or already removed."
-fi
+echo "\$(timestamp) Removing old Docker image (if exists)..."
+docker rmi -f ${IMAGE_NAME} >/dev/null 2>&1 || true
 
-echo "$(timestamp) Loading Docker image..."
-if docker load -i /var/www/safedrop/safedrop-prod.tar &>/dev/null; then
-    echo "$(timestamp) ✅ Image loaded successfully."
-else
-    echo "$(timestamp) ❌ Failed to load image."
-    exit 1
-fi
+echo "\$(timestamp) Loading new Docker image..."
+docker load -i ${VPS_PATH}/${TAR_FILE} >/dev/null
 
-echo "$(timestamp) Stopping existing container (if any)..."
-docker stop safedrop-prod &>/dev/null || echo "$(timestamp) ⚠ No running container to stop."
+echo "\$(timestamp) Stopping existing container (if any)..."
+docker stop ${CONTAINER_NAME} >/dev/null 2>&1 || true
 
-echo "$(timestamp) Removing existing container (if any)..."
-docker rm safedrop-prod &>/dev/null || echo "$(timestamp) ⚠ No container to remove."
+echo "\$(timestamp) Removing old container (if any)..."
+docker rm ${CONTAINER_NAME} >/dev/null 2>&1 || true
 
-echo "$(timestamp) Running new container..."
+echo "\$(timestamp) Running new container..."
 docker run -d \
-  --name safedrop-prod \
-  -p 3005:80 \
+  --name ${CONTAINER_NAME} \
+  -p ${FRONTEND_PORT}:80 \
   --restart unless-stopped \
   -e NODE_ENV=production \
-  -v /var/www/safedrop/data:/workspace/backend/data \
-  -v /var/www/safedrop/logs:/logs \
-  safedrop-prod:latest &>/dev/null && echo "$(timestamp) ✅ Container started successfully."
+  ${IMAGE_NAME} >/dev/null
 
-echo "$(timestamp) Deployment complete!"
+echo "\$(timestamp) ✅ Frontend container deployed and running on port ${FRONTEND_PORT}."
 EOF
 
-echo "$(timestamp) ✅ Remote deployment script finished."
+echo "$(timestamp) ✅ Remote deployment finished successfully."

@@ -7,17 +7,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
-      platforms: # Add this line/block
-        - linux/amd64 # Targets AMD64 only; add more like - linux/arm64 for multi-arch
+      platforms:
+        - linux/amd64 # ensures it matches your VPS host platform
     ports:
-      - "3000:3000" # Frontend + API proxy port
+      - "3000:80" # maps host port 3000 → container port 80
     environment:
       NODE_ENV: production
-      # Add any other env vars here, e.g. NEXT_PUBLIC_API_URL, SECRET_KEY, etc.
+      # NEXT_PUBLIC_API_URL=http://backend:8000 (set if backend is on a different container)
     restart: unless-stopped
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
